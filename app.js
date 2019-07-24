@@ -49,7 +49,7 @@ app.get('/apps', (req, res) => {
 
 
         res.json(sortedList)
-        res.send('awdad')
+        
 
   });
 

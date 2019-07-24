@@ -26,22 +26,6 @@ describe('GET /apps', () => {
     .expect(400, 'Search query must be one of the following: Action, Puzzle, Strategy, Casual, Arcade, Card');
   });
 
-  it.only('should sort by Rating', () => {
-    return request(app)
-      .get('/apps')
-      .query({sort: 'App'})
-      .expect(200)
-      .expect('Content-Type', /json/)
-      .then(res => {
-        expect(res.body).to.be.an('array');
-        let i = 0;
-        let sorted = true;
-        while(sorted && i < res.body.length - 1) {
-          sorted = sorted && res.body[i].App< res.body[i + 1].App;
-          i++;
-        }
-        expect(sorted).to.be.true;
-        });
-    });
+
 
 })
