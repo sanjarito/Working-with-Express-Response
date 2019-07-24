@@ -23,7 +23,7 @@ app.get('/apps', (req, res) => {
     return res
         .status(400)
         .send('Search query must be one of the following: Action, Puzzle, Strategy, Casual, Arcade, Card');
-    } else {
+    } else  {
       if (sort == "Rating"){
       sortedList = results.sort(function(a,b){
         return a.Rating - b.Rating
@@ -47,13 +47,10 @@ app.get('/apps', (req, res) => {
       }
   }
 
+
         res.json(sortedList)
+        res.send('awdad')
 
   });
 
-
-
-
-app.listen(8000, () => {
-  console.log('Server started on PORT 8000');
-});
+module.exports = app;
